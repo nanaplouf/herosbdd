@@ -7,6 +7,13 @@ require_once(__DIR__ . '/partials/head.php');
         <div class="form-group">
             <label for="pseudo" class="form-label">Donne moi ton pseudo :</label>
             <input type="text" name="pseudo" id="pseudo" placeholder="Toto" class="form-control">
+            <?php 
+            if(isset($arrayError['pseudo'])){
+                ?>
+                    <p class="text-danger"><?= $arrayError['pseudo']?></p>
+                <?php
+            }
+            ?>
         </div>
         <div class="form-group">
             <label for="email" class="form-label">Donne moi ton email :</label>
