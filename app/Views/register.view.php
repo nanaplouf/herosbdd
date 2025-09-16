@@ -16,6 +16,7 @@ require_once(__DIR__ . '/partials/head.php');
             <label for="password" class="form-label">Donne moi ton mot de pase :</label>
             <input type="password" name="password" id="password" class="form-control">
         </div>
+        <button type="submit" class="btn btn-success mt-5">Inscription</button>
     </div>
 </form>
 
