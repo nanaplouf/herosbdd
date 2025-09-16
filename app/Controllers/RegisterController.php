@@ -24,7 +24,6 @@ function checkFormat($nameInput, $value){
     $regexPseudo = '/^([0-9a-z_\-.A-Zà-üÀ-Ü]){3,255}$/';
     $regexPassword = '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/';
 
-
     //on prend le nom de l'input
     switch($nameInput){
 
@@ -38,21 +37,39 @@ function checkFormat($nameInput, $value){
             }
             break;
 
-        //pour le mail => FILTER_VALIDATE_EMAIL
+        case 'password':
+
+            if(!preg_match($regexPassword, $value)){
+                 $arrayError['password'] = 'Merci de donné un mot de passe avec au minimum : 8 caractères, 1 majuscule, 1 miniscule, 1 caractère spécial!';
+            }
+            break;
+
+        case 'email':
+
+            if(!filter_var($value, FILTER_VALIDATE_EMAIL)){
+                $arrayError['mail'] = 'Merci de renseigner un e-mail correcte!';
+            }
+            break;
     }
 }
 
 
 if(isset($_POST['pseudo'])){
 
-    checkFormat('pseudo', $_POST['pseudo']);
+    $valueEmail = htmlspecialchars($_POST['email']);
+    $valuePassword = htmlspecialchars($_POST['password']);
+    $valuePseudo = htmlspecialchars($_POST['pseudo']);
+
+    checkFormat('pseudo', $valuePseudo);
+    checkFormat('password', $valuePassword);
+    checkFormat('email', $valuePseudo);
+
     isNotEmpty('pseudo');
     isNotEmpty('email');
     isNotEmpty('password');
     
-    //le mot de passe doit avoir 8 char 1maj 1 min 1 num 1 spécial
-    //le pseudo 3 lettres ou num minimum on accepte les - _ . 
-    
+    //nos erreurs sont dans :
+    var_dump($arrayError);
 
     require_once( __DIR__ . "/../Views/register.view.php" );
 }else{
