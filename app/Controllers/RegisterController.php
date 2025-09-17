@@ -39,6 +39,7 @@ if(isset($_POST['pseudo'])){
         // 3- exécuter la requête :
         $queryStatement->execute();
 
+        redirectToRoute('/');
     }
 
     require_once( __DIR__ . "/../Views/register.view.php" );
