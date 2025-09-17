@@ -1,5 +1,6 @@
 <?php 
-    function redirectToRoute($route){
+    function redirectToRoute($route, $code){
+        http_response_code($code);
         header("Location: {$route}");
         exit;
     }

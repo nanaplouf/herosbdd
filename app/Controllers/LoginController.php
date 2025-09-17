@@ -53,7 +53,7 @@
                     ];
 
                     //var_dump($_SESSION);
-                    redirectToRoute('/');
+                    redirectToRoute('/', 200);
                 }
             }
         
