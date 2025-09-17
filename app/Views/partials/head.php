@@ -17,12 +17,24 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/register">S'inscrire</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Se connecter</a>
-        </li>
+        <?php
+          if(isset($_SESSION['user'])){
+        ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Se déconnecter</a>
+          </li>
+        <?php
+          } else {
+        ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">S'inscrire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Se connecter</a>
+          </li>
+        <?php
+        }
+        ?>
       </ul>
     </div>
   </div>
