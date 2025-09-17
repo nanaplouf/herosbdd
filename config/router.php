@@ -17,7 +17,7 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 // Vérification de l'existence de la route dans le tableau des routes
 // Si l'URI demandée existe dans le tableau, le contrôleur associé est inclus
 if(array_key_exists($uri, $routes)){
-;
+
     // Inclusion dynamique du fichier contrôleur correspondant à l'URI
     require_once(__DIR__ . "/../app/Controllers/" . $routes[$uri]);
 
