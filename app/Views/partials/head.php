@@ -19,6 +19,13 @@
       <ul class="navbar-nav">
         <?php
           if(isset($_SESSION['user'])){
+            if($_SESSION['user']['role'] === "admin"){
+              ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="/addheros">Ajouter un hero</a>
+                </li>
+              <?php
+            }
         ?>
           <li class="nav-item">
             <a class="nav-link" href="/logout">Se déconnecter</a>
