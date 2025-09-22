@@ -17,7 +17,7 @@
         </div>
         <div class="form-group">
             <label for="power" class="form-label">Le pouvoir de ton HERO:</label>
-            <input type="text" name="power" id="power" placeholder="Ses mouvements son si lent qu'il devient presque imperceptible" class="form-control">
+            <input type="text" name="power" id="power" value="<?= $hero['magic_power'] ?>" class="form-control">
             <?php 
             if(isset($arrayError['power'])){
                 ?>
@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="description" class="form-label">Parle moi de ton HERO:</label>
-            <textarea class="form-control" placeholder="Le plus petit des grands héros !" id="description" name="description" style="height: 100px"></textarea>
+            <textarea class="form-control" id="description" name="description" style="height: 100px"><?= $hero['description'] ?></textarea>
             <?php 
             if(isset($arrayError['description'])){
                 ?>
@@ -39,7 +39,7 @@
         </div>
         <div class="form-group">
             <label for="image" class="form-label">Nom de l'image :</label>
-            <input type="text" name="image" id="" class="form-control">
+            <input type="text" name="image" id="" class="form-control" value="<?= $hero['image'] ?>">
             <?php 
             if(isset($arrayError['image'])){
                 ?>

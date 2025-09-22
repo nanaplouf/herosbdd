@@ -21,8 +21,7 @@ require_once(__DIR__ . '/partials/head.php');
                 ?>
                 <div class="row my-5">
                     <div class="col-2">
-                        <a href="/edithero?id=<?= $hero['id'] ?>" class="btn btn-warning d-flex justify-content-center">Modifier</a>
-                        
+                        <a href="/edithero?id=<?= $hero['id'] ?>" class="btn btn-warning d-flex justify-content-center mt-3">Modifier</a>
                     </div>
                 </div>
                 <?php
